@@ -35,23 +35,14 @@ void Polygon2d::draw()
             product[row] = 0;
             for (int col = 0; col < 3; col++)
             {
-                product[row] += mtransformation[row][col] * mpoints[col];
+                product[row] += mtransformation(row, col) * mpoints[col];
             }
         }
 
         aux[i].set(product[0], product[1]);
     }
 
-    // reseta a matriz transformação
-    for (int row = 0; row < 3; row++)
-    {
-        for (int col = 0; col < 3; col++)
-        {
-            mtransformation[row][col] = 0;
-            if (row == col)
-                mtransformation[row][col] = 1;
-        }
-    }
+    mtransformation = Matrix::createIdentity(3);
 
     for (int i = 0; i < aux.size(); i++)
     {
@@ -62,81 +53,17 @@ void Polygon2d::draw()
 
 void Polygon2d::scale()
 {
-    float product[3][3];
-
-    for (int row = 0; row < 3; row++)
-    {
-        for (int col = 0; col < 3; col++)
-        {
-            product[row][col] = 0;
-            // Multiply the row of A by the column of B to get the row, column of product.
-            for (int inner = 0; inner < 3; inner++)
-            {
-                product[row][col] += mtransformation[row][inner] * mscale[inner][col];
-            }
-        }
-    }
-
-    for (int row = 0; row < 3; row++)
-    {
-        for (int col = 0; col < 3; col++)
-        {
-            mtransformation[row][col] = product[row][col];
-        }
-    }
+    mtransformation *= mscale;
 }
 
 void Polygon2d::rotate()
 {
-    float product[3][3];
-
-    for (int row = 0; row < 3; row++)
-    {
-        for (int col = 0; col < 3; col++)
-        {
-            product[row][col] = 0;
-            // Multiply the row of A by the column of B to get the row, column of product.
-            for (int inner = 0; inner < 3; inner++)
-            {
-                product[row][col] += mtransformation[row][inner] * mrotate[inner][col];
-            }
-        }
-    }
-
-    for (int row = 0; row < 3; row++)
-    {
-        for (int col = 0; col < 3; col++)
-        {
-            mtransformation[row][col] = product[row][col];
-        }
-    }
+    mtransformation *= mrotate;
 }
 
 void Polygon2d::translate()
 {
-    Utils::multplyMatrix((float **)mtransformation, (float **)mtranslate, 3, 3, 3);
-    // float product[3][3];
-
-    // for (int row = 0; row < 3; row++)
-    // {
-    //     for (int col = 0; col < 3; col++)
-    //     {
-    //         product[row][col] = 0;
-    //         // Multiply the row of A by the column of B to get the row, column of product.
-    //         for (int inner = 0; inner < 3; inner++)
-    //         {
-    //             product[row][col] += mtransformation[row][inner] * mtranslate[inner][col];
-    //         }
-    //     }
-    // }
-
-    // for (int row = 0; row < 3; row++)
-    // {
-    //     for (int col = 0; col < 3; col++)
-    //     {
-    //         mtransformation[row][col] = product[row][col];
-    //     }
-    // }
+    mtransformation *= mtranslate;
 }
 
 void Polygon2d::transform()
@@ -152,24 +79,24 @@ void Polygon2d::transform()
 void Polygon2d::setRotation(float angle)
 {
     this->degrees = angle;
-    mrotate[0][0] = cos(angle);
-    mrotate[0][1] = -sin(angle);
-    mrotate[1][0] = sin(angle);
-    mrotate[1][1] = cos(angle);
+    mrotate(0, 0) = cos(angle);
+    mrotate(0, 1) = -sin(angle);
+    mrotate(1, 0) = sin(angle);
+    mrotate(1, 1) = cos(angle);
 }
 
 void Polygon2d::setScale(float x, float y)
 {
     this->sx = x;
     this->sy = y;
-    mscale[0][0] = x;
-    mscale[1][1] = y;
+    mscale(0, 0) = x;
+    mscale(1, 1) = y;
 }
 
 void Polygon2d::setTranslation(float x, float y)
 {
     this->tx = x;
     this->ty = y;
-    mtranslate[0][2] = x;
-    mtranslate[1][2] = y;
+    mtranslate(0, 2) = x;
+    mtranslate(1, 2) = y;
 }

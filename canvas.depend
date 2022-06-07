@@ -200,16 +200,26 @@
 	"polygon.h"
 	"../../canvas/gl_canvas2d.h"
 
-1654463581 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.h
+1654473493 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.h
 	"../canvas/gl_canvas2d.h"
 	"../utils/vector2.h"
+	"../matrix/matrix.h"
 	<iostream>
 	<vector>
 
-1654465246 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
+1654475933 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
 	"polygon.h"
 	"../canvas/gl_canvas2d.h"
 	"../utils/utils.h"
 
 1654465179 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\utils.h
+
+1654475382 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.h
+	<iostream>
+
+1654475787 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.cpp
+	<stdexcept>
+	<iostream>
+	<iomanip>
+	"matrix.h"
 

@@ -3,6 +3,7 @@
 
 #include "../canvas/gl_canvas2d.h"
 #include "../utils/vector2.h"
+#include "../matrix/matrix.h"
 #include <iostream>
 #include <vector>
 
@@ -29,29 +30,13 @@ public:
     float sy = 1;
 
 private:
-    float mtransformation[3][3] = {
-        {1.0, 0, 0},
-        {0, 1.0, 0},
-        {0, 0, 1.0},
-    };
+    Matrix mtransformation = Matrix::createIdentity(3);
 
-    float mtranslate[3][3] = {
-        {1.0, 0, tx},
-        {0, 1.0, ty},
-        {0, 0, 1.0},
-    };
+    Matrix mscale = Matrix::createIdentity(3);
 
-    float mrotate[3][3] = {
-        {cos(degrees), -sin(degrees), 0},
-        {sin(degrees), cos(degrees), 0},
-        {0, 0, 1.0},
-    };
+    Matrix mrotate = Matrix::createIdentity(3);
 
-    float mscale[3][3] = {
-        {sx, 0, 0},
-        {0, sy, 0},
-        {0, 0, 1.0},
-    };
+    Matrix mtranslate = Matrix::createIdentity(3);
 };
 
 #endif // POLYGON_H_INCLUDED

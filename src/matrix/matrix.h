@@ -11,19 +11,19 @@ class Matrix
 {
 public:
     Matrix(int, int);
-    Matrix(double **, int, int);
+    Matrix(float **, int, int);
     Matrix();
     ~Matrix();
     Matrix(const Matrix &);
     Matrix &operator=(const Matrix &);
 
-    inline double &operator()(int x, int y) { return p[x][y]; }
+    inline float &operator()(int x, int y) { return p[x][y]; }
 
     Matrix &operator+=(const Matrix &);
     Matrix &operator-=(const Matrix &);
     Matrix &operator*=(const Matrix &);
-    Matrix &operator*=(double);
-    Matrix &operator/=(double);
+    Matrix &operator*=(float);
+    Matrix &operator/=(float);
     Matrix operator^(int);
 
     friend std::ostream &operator<<(std::ostream &, const Matrix &);
@@ -37,7 +37,7 @@ public:
     static Matrix bandSolve(Matrix, Matrix, int);
 
     // functions on vectors
-    static double dotProduct(Matrix, Matrix);
+    static float dotProduct(Matrix, Matrix);
 
     // functions on augmented matrices
     static Matrix augment(Matrix, Matrix);
@@ -46,9 +46,11 @@ public:
     void readSolutionsFromRREF(std::ostream &os);
     Matrix inverse();
 
+    void print();
+
 private:
     int rows_, cols_;
-    double **p;
+    float **p;
 
     void allocSpace();
     Matrix expHelper(const Matrix &, int);
@@ -57,8 +59,8 @@ private:
 Matrix operator+(const Matrix &, const Matrix &);
 Matrix operator-(const Matrix &, const Matrix &);
 Matrix operator*(const Matrix &, const Matrix &);
-Matrix operator*(const Matrix &, double);
-Matrix operator*(double, const Matrix &);
-Matrix operator/(const Matrix &, double);
+Matrix operator*(const Matrix &, float);
+Matrix operator*(float, const Matrix &);
+Matrix operator/(const Matrix &, float);
 
 #endif
