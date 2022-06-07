@@ -120,16 +120,16 @@
 	<GL/freeglut_ext.h>
 	"../Vector2.h"
 
-1654459421 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\main.cpp
+1654572985 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	"GUI/GUI.h"
 	<iostream>
 
-1426372440 g:\meu drive\cg\demos\trabalho3_henrique_borba\include\gl\glut.h
+1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\include\gl\glut.h
 	"freeglut_std.h"
 
-1437579942 g:\meu drive\cg\demos\trabalho3_henrique_borba\include\gl\freeglut_std.h
+1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\include\gl\freeglut_std.h
 	<windows.h>
 	<EGL/egl.h>
 	<GLES/gl.h>
@@ -140,10 +140,10 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1426372440 g:\meu drive\cg\demos\trabalho3_henrique_borba\include\gl\freeglut_ext.h
+1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1654459648 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\canvas\gl_canvas2d.h
+1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\canvas\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -154,11 +154,11 @@
 
 1654012758 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\vector2.h
 
-1654459648 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\canvas\gl_canvas2d.cpp
+1654568016 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\canvas\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1654055139 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\vector2.h
+1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\vector2.h
 	<math.h>
 	<stdio.h>
 
@@ -171,10 +171,10 @@
 1654016255 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\line\line.h
 	"../vector2.h"
 
-1654459703 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
+1654573754 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
 	"../polygon/polygon.h"
 
-1654463605 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
+1654574453 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
 	<iostream>
 	"GUI.h"
 	"GUI.h"
@@ -194,30 +194,31 @@
 	<iostream>
 	<vector>
 
-1654018847 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.cpp
+1654568016 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.cpp
 
 1654376038 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\polygon\polygon.cpp
 	"polygon.h"
 	"../../canvas/gl_canvas2d.h"
 
-1654473493 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.h
+1654574058 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.h
 	"../canvas/gl_canvas2d.h"
 	"../utils/vector2.h"
 	"../matrix/matrix.h"
 	<iostream>
 	<vector>
 
-1654475933 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
+1654574295 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
 	"polygon.h"
 	"../canvas/gl_canvas2d.h"
 	"../utils/utils.h"
+	"../GUI/GUI.h"
 
-1654465179 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\utils.h
+1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\utils.h
 
-1654475382 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.h
+1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.h
 	<iostream>
 
-1654475787 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.cpp
+1654568016 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.cpp
 	<stdexcept>
 	<iostream>
 	<iomanip>

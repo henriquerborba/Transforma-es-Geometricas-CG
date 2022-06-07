@@ -10,13 +10,10 @@ using namespace std;
  */
 GUI::GUI()
 {
-    aspectRatio = 16 / 9;
     screenWidth = 1366;
-    screenHeight = screenWidth / aspectRatio;
+    screenHeight = 768;
     polygon = new Polygon2d(4);
 }
-
-GUI::~GUI() {}
 
 /* Renderiza/desenha tudo que sera necessario na tela
  */
@@ -38,27 +35,27 @@ void GUI::Keyboard(int key)
         exit(0);
         break;
     case 43:
-        polygon->sx += 10;
-        polygon->sy += 10;
+        polygon->width += 10;
+        polygon->height += 10;
         break;
     case 45:
-        polygon->sx -= 10;
-        polygon->sy -= 10;
+        polygon->width -= 10;
+        polygon->height -= 10;
         break;
     case 61:
-        polygon->degrees += PI_2 / 18;
+        polygon->angle += 10 * PI / 180;
         break;
     case 200:
-        polygon->tx -= 10;
+        polygon->positionX -= 10;
         break;
     case 201:
-        polygon->ty += 10;
+        polygon->positionY += 10;
         break;
     case 202:
-        polygon->tx += 10;
+        polygon->positionX += 10;
         break;
     case 203:
-        polygon->ty -= 10;
+        polygon->positionY -= 10;
         break;
     }
 }

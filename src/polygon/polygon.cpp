@@ -1,9 +1,13 @@
 #include "polygon.h"
 #include "../canvas/gl_canvas2d.h"
 #include "../utils/utils.h"
+#include "../GUI/GUI.h"
 
 Polygon2d::Polygon2d(int n)
 {
+    rotate(PI_2);
+    translate(GUI::getScreenWidth() / 2, GUI::getScreenHeight() / 2);
+    scale(100, 100);
     float start = n % 2 == 1 ? PI / 2 : PI / n;
     float offset = PI_2 / n;
     for (int i = 0; i < n; i++)
@@ -51,52 +55,37 @@ void Polygon2d::draw()
     }
 }
 
-void Polygon2d::scale()
+void Polygon2d::scale(float width, float height)
 {
+    this->width = width;
+    this->height = height;
+    mscale(0, 0) = width;
+    mscale(1, 1) = height;
     mtransformation *= mscale;
 }
 
-void Polygon2d::rotate()
+void Polygon2d::rotate(float angle)
 {
+    this->angle = angle;
+    mrotate(0, 0) = cos(angle);
+    mrotate(0, 1) = -sin(angle);
+    mrotate(1, 0) = sin(angle);
+    mrotate(1, 1) = cos(angle);
     mtransformation *= mrotate;
 }
 
-void Polygon2d::translate()
+void Polygon2d::translate(float positionX, float positionY)
 {
+    this->positionX = positionX;
+    this->positionY = positionY;
+    mtranslate(0, 2) = positionX;
+    mtranslate(1, 2) = positionY;
     mtransformation *= mtranslate;
 }
 
 void Polygon2d::transform()
 {
-    setTranslation(tx, ty);
-    setRotation(degrees);
-    setScale(sx, sy);
-    translate();
-    scale();
-    rotate();
-}
-
-void Polygon2d::setRotation(float angle)
-{
-    this->degrees = angle;
-    mrotate(0, 0) = cos(angle);
-    mrotate(0, 1) = -sin(angle);
-    mrotate(1, 0) = sin(angle);
-    mrotate(1, 1) = cos(angle);
-}
-
-void Polygon2d::setScale(float x, float y)
-{
-    this->sx = x;
-    this->sy = y;
-    mscale(0, 0) = x;
-    mscale(1, 1) = y;
-}
-
-void Polygon2d::setTranslation(float x, float y)
-{
-    this->tx = x;
-    this->ty = y;
-    mtranslate(0, 2) = x;
-    mtranslate(1, 2) = y;
+    translate(positionX, positionY);
+    scale(width, height);
+    rotate(angle);
 }

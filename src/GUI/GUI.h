@@ -6,14 +6,17 @@
 class GUI
 {
 private:
-    int mx, my;        // variaveis do mouse para poder exibir dentro da render().
-    float aspectRatio; // aspect ratio da tela.
+    int mx, my; // variaveis do mouse para poder exibir dentro da render().
+    int screenWidth, screenHeight;
+    GUI();
+    GUI(const GUI &) = delete;
+    static GUI instance;
 
 public:
-    int screenWidth, screenHeight;
+    static GUI &getInstance() { return instance; }
+    static int getScreenWidth() { return instance.screenWidth; }
+    static int getScreenHeight() { return instance.screenHeight; }
     Polygon2d *polygon;
-    GUI();
-    ~GUI();
     void InitCanvas();
     void Render();
     void Keyboard(int key);

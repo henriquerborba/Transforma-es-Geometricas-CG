@@ -56,15 +56,14 @@
 		<Unit filename="src/canvas/gl_canvas2d.cpp" />
 		<Unit filename="src/canvas/gl_canvas2d.h" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/matrix/matrix.cpp" />
+		<Unit filename="src/matrix/matrix.h" />
+		<Unit filename="src/polygon/polygon.cpp" />
+		<Unit filename="src/polygon/polygon.h" />
 		<Unit filename="src/stickman/stickman.cpp" />
 		<Unit filename="src/stickman/stickman.h" />
+		<Unit filename="src/utils/Utils.h" />
 		<Unit filename="src/utils/Vector2.h" />
-		<Unit filename="src/utils/circle/circle.cpp" />
-		<Unit filename="src/utils/circle/circle.h" />
-		<Unit filename="src/utils/line/line.cpp" />
-		<Unit filename="src/utils/line/line.h" />
-		<Unit filename="src/utils/polygon/polygon.cpp" />
-		<Unit filename="src/utils/polygon/polygon.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

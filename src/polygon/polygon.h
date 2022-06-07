@@ -16,18 +16,15 @@ public:
     ~Polygon2d();
     vector<Vector2> vertices;
     void draw();
-    void scale();
-    void rotate();
-    void translate();
+    void scale(float width, float height);
+    void rotate(float angle);
+    void translate(float positionX, float positionY);
     void transform();
-    void setTranslation(float x, float y);
-    void setScale(float x, float y);
-    void setRotation(float angle);
-    float degrees = PI_2;
-    float tx = 0;
-    float ty = 0;
-    float sx = 1;
-    float sy = 1;
+    float angle;
+    float positionX;
+    float positionY;
+    float width;
+    float height;
 
 private:
     Matrix mtransformation = Matrix::createIdentity(3);
