@@ -5,9 +5,6 @@
 
 Polygon2d::Polygon2d(int n)
 {
-    rotate(PI_2);
-    translate(GUI::getScreenWidth() / 2, GUI::getScreenHeight() / 2);
-    scale(100, 100);
     float start = n % 2 == 1 ? PI / 2 : PI / n;
     float offset = PI_2 / n;
     for (int i = 0; i < n; i++)
@@ -17,6 +14,9 @@ Polygon2d::Polygon2d(int n)
         float y = sin(angle);
         this->vertices.push_back(Vector2(x, y));
     }
+    rotate(90);
+    translate(GUI::getScreenWidth() / 2, GUI::getScreenHeight() / 2);
+    scale(100, 100);
 }
 
 Polygon2d::~Polygon2d()
@@ -33,17 +33,7 @@ void Polygon2d::draw()
     float product[3];
     for (int i = 0; i < aux.size(); i++)
     {
-        float mpoints[3] = {aux[i].x, aux[i].y, 1};
-        for (int row = 0; row < 3; row++)
-        {
-            product[row] = 0;
-            for (int col = 0; col < 3; col++)
-            {
-                product[row] += mtransformation(row, col) * mpoints[col];
-            }
-        }
-
-        aux[i].set(product[0], product[1]);
+        aux[i] = mtransformation * aux[i];
     }
 
     mtransformation = Matrix::createIdentity(3);
@@ -52,6 +42,7 @@ void Polygon2d::draw()
     {
         CV::color(0, 0, 0);
         CV::line(aux[i], aux[(i + 1) % aux.size()]);
+        // printf("%f %f\n", aux[i].x, aux[i].y);
     }
 }
 
@@ -59,18 +50,14 @@ void Polygon2d::scale(float width, float height)
 {
     this->width = width;
     this->height = height;
-    mscale(0, 0) = width;
-    mscale(1, 1) = height;
+    mscale = Matrix::scale(this->width, this->height);
     mtransformation *= mscale;
 }
 
 void Polygon2d::rotate(float angle)
 {
     this->angle = angle;
-    mrotate(0, 0) = cos(angle);
-    mrotate(0, 1) = -sin(angle);
-    mrotate(1, 0) = sin(angle);
-    mrotate(1, 1) = cos(angle);
+    mrotate = Matrix::rotate(angle);
     mtransformation *= mrotate;
 }
 
@@ -78,14 +65,19 @@ void Polygon2d::translate(float positionX, float positionY)
 {
     this->positionX = positionX;
     this->positionY = positionY;
-    mtranslate(0, 2) = positionX;
-    mtranslate(1, 2) = positionY;
+    mtranslate = Matrix::translate(positionX, positionY);
     mtransformation *= mtranslate;
+}
+
+void Polygon2d::addTransformation(Matrix m = Matrix::createIdentity(3))
+{
+    mtransformation *= m;
 }
 
 void Polygon2d::transform()
 {
     translate(positionX, positionY);
-    scale(width, height);
     rotate(angle);
+    scale(width, height);
+    addTransformation();
 }

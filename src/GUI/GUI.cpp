@@ -13,6 +13,15 @@ GUI::GUI()
     screenWidth = 1366;
     screenHeight = 768;
     polygon = new Polygon2d(4);
+    polygon->scale(100, 200);
+    xAxis = new Polygon2d(2);
+    xAxis->rotate(90);
+    xAxis->translate(screenWidth / 2, screenHeight / 2);
+    xAxis->scale(1, 500);
+    yAxis = new Polygon2d(2);
+    yAxis->translate(screenWidth / 2, screenHeight / 2);
+    yAxis->scale(1, 500);
+    yAxis->rotate(0);
 }
 
 /* Renderiza/desenha tudo que sera necessario na tela
@@ -21,6 +30,8 @@ void GUI::Render()
 {
     CV::color(0, 0, 0);
     polygon->draw();
+    xAxis->draw();
+    yAxis->draw();
 }
 
 /* Controla as teclas apertadas durante a execucao
@@ -43,7 +54,7 @@ void GUI::Keyboard(int key)
         polygon->height -= 10;
         break;
     case 61:
-        polygon->angle += 10 * PI / 180;
+        polygon->angle += 10;
         break;
     case 200:
         polygon->positionX -= 10;

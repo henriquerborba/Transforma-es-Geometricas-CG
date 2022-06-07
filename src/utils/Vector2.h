@@ -59,6 +59,11 @@ public:
         y /= norm;
     }
 
+    float module()
+    {
+        return sqrt(x * x + y * y);
+    }
+
     Vector2 operator-(const Vector2 &v)
     {
         Vector2 aux(x - v.x, y - v.y);

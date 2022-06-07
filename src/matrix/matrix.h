@@ -6,6 +6,7 @@
 #define __MATRIX_H__
 
 #include <iostream>
+#include "../utils/vector2.h"
 
 class Matrix
 {
@@ -25,25 +26,22 @@ public:
     Matrix &operator*=(float);
     Matrix &operator/=(float);
     Matrix operator^(int);
-
-    friend std::ostream &operator<<(std::ostream &, const Matrix &);
-    friend std::istream &operator>>(std::istream &, Matrix &);
+    Vector2 operator*(Vector2 v);
 
     void swapRows(int, int);
     Matrix transpose();
 
     static Matrix createIdentity(int);
-    static Matrix solve(Matrix, Matrix);
-    static Matrix bandSolve(Matrix, Matrix, int);
+
+    // transformations
+    static Matrix scale(float sx, float sy);
+    static Matrix rotate(float angle);
+    static Matrix translate(float positionX, float positionY);
 
     // functions on vectors
     static float dotProduct(Matrix, Matrix);
 
     // functions on augmented matrices
-    static Matrix augment(Matrix, Matrix);
-    Matrix gaussianEliminate();
-    Matrix rowReduceFromGaussian();
-    void readSolutionsFromRREF(std::ostream &os);
     Matrix inverse();
 
     void print();

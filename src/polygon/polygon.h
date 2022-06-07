@@ -19,6 +19,7 @@ public:
     void scale(float width, float height);
     void rotate(float angle);
     void translate(float positionX, float positionY);
+    void addTransformation(Matrix m);
     void transform();
     float angle;
     float positionX;

@@ -17,6 +17,9 @@ public:
     static int getScreenWidth() { return instance.screenWidth; }
     static int getScreenHeight() { return instance.screenHeight; }
     Polygon2d *polygon;
+    Polygon2d *xAxis;
+    Polygon2d *yAxis;
+
     void InitCanvas();
     void Render();
     void Keyboard(int key);
