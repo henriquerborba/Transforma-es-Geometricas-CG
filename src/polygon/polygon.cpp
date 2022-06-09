@@ -14,9 +14,6 @@ Polygon2d::Polygon2d(int n)
         float y = sin(angle);
         this->vertices.push_back(Vector2(x, y));
     }
-    rotate(90);
-    translate(GUI::getScreenWidth() / 2, GUI::getScreenHeight() / 2);
-    scale(100, 100);
 }
 
 Polygon2d::~Polygon2d()
@@ -27,6 +24,7 @@ Polygon2d::~Polygon2d()
 void Polygon2d::draw()
 {
     transform();
+
     vector<Vector2> aux = vertices;
 
     // aplica a transformação em cada um dos pontos e salva na variavel aux
@@ -69,15 +67,15 @@ void Polygon2d::translate(float positionX, float positionY)
     mtransformation *= mtranslate;
 }
 
-void Polygon2d::addTransformation(Matrix m = Matrix::createIdentity(3))
+void Polygon2d::addTransformation(Matrix m)
 {
-    mtransformation *= m;
+    this->wtransformation = m;
 }
 
 void Polygon2d::transform()
 {
-    translate(positionX, positionY);
     rotate(angle);
+    translate(positionX, positionY);
     scale(width, height);
-    addTransformation();
+    mtransformation *= wtransformation;
 }

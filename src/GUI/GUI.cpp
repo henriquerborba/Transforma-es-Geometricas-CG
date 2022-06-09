@@ -1,8 +1,8 @@
 #include <iostream>
 #include "GUI.h"
-#include "GUI.h"
 #include "../Canvas/gl_canvas2d.h"
 #include "../polygon/polygon.h"
+#include "../stickman/stickmanPart/stickmanPart.h"
 
 using namespace std;
 
@@ -12,26 +12,20 @@ GUI::GUI()
 {
     screenWidth = 1366;
     screenHeight = 768;
-    polygon = new Polygon2d(4);
-    polygon->scale(100, 200);
-    xAxis = new Polygon2d(2);
-    xAxis->rotate(90);
-    xAxis->translate(screenWidth / 2, screenHeight / 2);
-    xAxis->scale(1, 500);
-    yAxis = new Polygon2d(2);
-    yAxis->translate(screenWidth / 2, screenHeight / 2);
-    yAxis->scale(1, 500);
-    yAxis->rotate(0);
+    stickmanPart = new StickmanPart(200, 1, Vector2(0, 100), 30, 4);
+    stickmanPart2 = new StickmanPart(200, 1, Vector2(200, 100), 30, 4);
 }
 
 /* Renderiza/desenha tudo que sera necessario na tela
  */
 void GUI::Render()
 {
+    CV::translate(GUI::getScreenWidth() / 2, GUI::getScreenHeight() / 2);
     CV::color(0, 0, 0);
-    polygon->draw();
-    xAxis->draw();
-    yAxis->draw();
+    CV::line(0, -GUI::screenHeight / 2, 0, GUI::screenHeight / 2);
+    CV::line(-GUI::screenWidth / 2, 0, GUI::screenWidth / 2, 0);
+    stickmanPart->draw();
+    stickmanPart2->draw();
 }
 
 /* Controla as teclas apertadas durante a execucao
@@ -45,28 +39,8 @@ void GUI::Keyboard(int key)
     case 27:
         exit(0);
         break;
-    case 43:
-        polygon->width += 10;
-        polygon->height += 10;
-        break;
-    case 45:
-        polygon->width -= 10;
-        polygon->height -= 10;
-        break;
-    case 61:
-        polygon->angle += 10;
-        break;
-    case 200:
-        polygon->positionX -= 10;
-        break;
     case 201:
-        polygon->positionY += 10;
-        break;
-    case 202:
-        polygon->positionX += 10;
-        break;
-    case 203:
-        polygon->positionY -= 10;
+        stickmanPart->rotation += 1;
         break;
     }
 }

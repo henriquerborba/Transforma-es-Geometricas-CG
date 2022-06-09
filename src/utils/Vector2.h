@@ -50,7 +50,6 @@ public:
 
         if (norm == 0.0)
         {
-            printf("\n\nNormalize::Divisao por zero");
             x = 1;
             y = 1;
             return;

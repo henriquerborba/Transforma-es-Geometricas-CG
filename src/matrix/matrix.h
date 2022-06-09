@@ -42,6 +42,10 @@ public:
     static float dotProduct(Matrix, Matrix);
 
     // functions on augmented matrices
+    static Matrix augment(Matrix, Matrix);
+    Matrix gaussianEliminate();
+    Matrix rowReduceFromGaussian();
+    void readSolutionsFromRREF(std::ostream &os);
     Matrix inverse();
 
     void print();

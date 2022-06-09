@@ -21,11 +21,11 @@ public:
     void translate(float positionX, float positionY);
     void addTransformation(Matrix m);
     void transform();
-    float angle;
-    float positionX;
-    float positionY;
-    float width;
-    float height;
+    float angle = 0;
+    float positionX = 0;
+    float positionY = 0;
+    float width = 1;
+    float height = 1;
 
 private:
     Matrix mtransformation = Matrix::createIdentity(3);
@@ -35,6 +35,8 @@ private:
     Matrix mrotate = Matrix::createIdentity(3);
 
     Matrix mtranslate = Matrix::createIdentity(3);
+
+    Matrix wtransformation = Matrix::createIdentity(3);
 };
 
 #endif // POLYGON_H_INCLUDED

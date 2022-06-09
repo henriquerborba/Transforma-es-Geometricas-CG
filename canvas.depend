@@ -158,7 +158,7 @@
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1654627892 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\vector2.h
+1654691469 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\vector2.h
 	<math.h>
 	<stdio.h>
 
@@ -171,15 +171,16 @@
 1654016255 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\line\line.h
 	"../vector2.h"
 
-1654621443 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
+1654747008 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
 	"../polygon/polygon.h"
+	"../stickman/stickmanPart/stickmanPart.h"
 
-1654629538 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
+1654749483 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
 	<iostream>
-	"GUI.h"
 	"GUI.h"
 	"../Canvas/gl_canvas2d.h"
 	"../polygon/polygon.h"
+	"../stickman/stickmanPart/stickmanPart.h"
 
 1654018735 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\circle\circle.cpp
 	"circle.h"
@@ -200,14 +201,14 @@
 	"polygon.h"
 	"../../canvas/gl_canvas2d.h"
 
-1654629404 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.h
+1654737692 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.h
 	"../canvas/gl_canvas2d.h"
 	"../utils/vector2.h"
 	"../matrix/matrix.h"
 	<iostream>
 	<vector>
 
-1654629394 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
+1654750330 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
 	"polygon.h"
 	"../canvas/gl_canvas2d.h"
 	"../utils/utils.h"
@@ -215,13 +216,22 @@
 
 1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\utils.h
 
-1654614904 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.h
+1654736139 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.h
 	<iostream>
 	"../utils/vector2.h"
 
-1654615847 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.cpp
+1654736110 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.cpp
 	<stdexcept>
 	<iostream>
 	<iomanip>
 	"matrix.h"
+
+1654749005 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickmanpart\stickmanpart.h
+	"../../utils/vector2.h"
+	"../../polygon/polygon.h"
+	"../../matrix/matrix.h"
+
+1654749893 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickmanpart\stickmanpart.cpp
+	"stickmanPart.h"
+	"../../GUI/GUI.h"
 

@@ -272,6 +272,163 @@ void Matrix::print()
         cout << endl;
     }
 }
+// functions on AUGMENTED matrices
+Matrix Matrix::augment(Matrix A, Matrix B)
+{
+    Matrix AB(A.rows_, A.cols_ + B.cols_);
+    for (int i = 0; i < AB.rows_; ++i)
+    {
+        for (int j = 0; j < AB.cols_; ++j)
+        {
+            if (j < A.cols_)
+                AB(i, j) = A(i, j);
+            else
+                AB(i, j) = B(i, j - B.cols_);
+        }
+    }
+    return AB;
+}
+
+Matrix Matrix::gaussianEliminate()
+{
+    Matrix Ab(*this);
+    int rows = Ab.rows_;
+    int cols = Ab.cols_;
+    int Acols = cols - 1;
+
+    int i = 0; // row tracker
+    int j = 0; // column tracker
+
+    // iterate through the rows
+    while (i < rows)
+    {
+        // find a pivot for the row
+        bool pivot_found = false;
+        while (j < Acols && !pivot_found)
+        {
+            if (Ab(i, j) != 0)
+            { // pivot not equal to 0
+                pivot_found = true;
+            }
+            else
+            { // check for a possible swap
+                int max_row = i;
+                double max_val = 0;
+                for (int k = i + 1; k < rows; ++k)
+                {
+                    double cur_abs = Ab(k, j) >= 0 ? Ab(k, j) : -1 * Ab(k, j);
+                    if (cur_abs > max_val)
+                    {
+                        max_row = k;
+                        max_val = cur_abs;
+                    }
+                }
+                if (max_row != i)
+                {
+                    Ab.swapRows(max_row, i);
+                    pivot_found = true;
+                }
+                else
+                {
+                    j++;
+                }
+            }
+        }
+
+        // perform elimination as normal if pivot was found
+        if (pivot_found)
+        {
+            for (int t = i + 1; t < rows; ++t)
+            {
+                for (int s = j + 1; s < cols; ++s)
+                {
+                    Ab(t, s) = Ab(t, s) - Ab(i, s) * (Ab(t, j) / Ab(i, j));
+                    if (Ab(t, s) < EPS && Ab(t, s) > -1 * EPS)
+                        Ab(t, s) = 0;
+                }
+                Ab(t, j) = 0;
+            }
+        }
+
+        i++;
+        j++;
+    }
+
+    return Ab;
+}
+
+Matrix Matrix::rowReduceFromGaussian()
+{
+    Matrix R(*this);
+    int rows = R.rows_;
+    int cols = R.cols_;
+
+    int i = rows - 1; // row tracker
+    int j = cols - 2; // column tracker
+
+    // iterate through every row
+    while (i >= 0)
+    {
+        // find the pivot column
+        int k = j - 1;
+        while (k >= 0)
+        {
+            if (R(i, k) != 0)
+                j = k;
+            k--;
+        }
+
+        // zero out elements above pivots if pivot not 0
+        if (R(i, j) != 0)
+        {
+
+            for (int t = i - 1; t >= 0; --t)
+            {
+                for (int s = 0; s < cols; ++s)
+                {
+                    if (s != j)
+                    {
+                        R(t, s) = R(t, s) - R(i, s) * (R(t, j) / R(i, j));
+                        if (R(t, s) < EPS && R(t, s) > -1 * EPS)
+                            R(t, s) = 0;
+                    }
+                }
+                R(t, j) = 0;
+            }
+
+            // divide row by pivot
+            for (int k = j + 1; k < cols; ++k)
+            {
+                R(i, k) = R(i, k) / R(i, j);
+                if (R(i, k) < EPS && R(i, k) > -1 * EPS)
+                    R(i, k) = 0;
+            }
+            R(i, j) = 1;
+        }
+
+        i--;
+        j--;
+    }
+
+    return R;
+}
+
+Matrix Matrix::inverse()
+{
+    Matrix I = Matrix::createIdentity(rows_);
+    Matrix AI = Matrix::augment(*this, I);
+    Matrix U = AI.gaussianEliminate();
+    Matrix IAInverse = U.rowReduceFromGaussian();
+    Matrix AInverse(rows_, cols_);
+    for (int i = 0; i < AInverse.rows_; ++i)
+    {
+        for (int j = 0; j < AInverse.cols_; ++j)
+        {
+            AInverse(i, j) = IAInverse(i, j + cols_);
+        }
+    }
+    return AInverse;
+}
 
 /* PRIVATE HELPER FUNCTIONS
  ********************************/

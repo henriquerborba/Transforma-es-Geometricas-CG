@@ -2,6 +2,7 @@
 #define GUI_H_INCLUDED
 
 #include "../polygon/polygon.h"
+#include "../stickman/stickmanPart/stickmanPart.h"
 
 class GUI
 {
@@ -16,9 +17,8 @@ public:
     static GUI &getInstance() { return instance; }
     static int getScreenWidth() { return instance.screenWidth; }
     static int getScreenHeight() { return instance.screenHeight; }
-    Polygon2d *polygon;
-    Polygon2d *xAxis;
-    Polygon2d *yAxis;
+    StickmanPart *stickmanPart;
+    StickmanPart *stickmanPart2;
 
     void InitCanvas();
     void Render();
