@@ -60,10 +60,11 @@
 		<Unit filename="src/matrix/matrix.h" />
 		<Unit filename="src/polygon/polygon.cpp" />
 		<Unit filename="src/polygon/polygon.h" />
+		<Unit filename="src/stickman/ObjectPart/ObjectPart.cpp" />
+		<Unit filename="src/stickman/ObjectPart/ObjectPart.h" />
+		<Unit filename="src/stickman/ObjectPart/objectPart" />
 		<Unit filename="src/stickman/stickman.cpp" />
 		<Unit filename="src/stickman/stickman.h" />
-		<Unit filename="src/stickman/stickmanPart/stickmanPart.cpp" />
-		<Unit filename="src/stickman/stickmanPart/stickmanPart.h" />
 		<Unit filename="src/utils/Utils.h" />
 		<Unit filename="src/utils/Vector2.h" />
 		<Extensions>

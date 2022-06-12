@@ -40,7 +40,6 @@ void Polygon2d::draw()
     {
         CV::color(0, 0, 0);
         CV::line(aux[i], aux[(i + 1) % aux.size()]);
-        // printf("%f %f\n", aux[i].x, aux[i].y);
     }
 }
 

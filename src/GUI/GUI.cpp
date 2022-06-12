@@ -2,7 +2,6 @@
 #include "GUI.h"
 #include "../Canvas/gl_canvas2d.h"
 #include "../polygon/polygon.h"
-#include "../stickman/stickmanPart/stickmanPart.h"
 
 using namespace std;
 
@@ -12,8 +11,7 @@ GUI::GUI()
 {
     screenWidth = 1366;
     screenHeight = 768;
-    stickmanPart = new StickmanPart(200, 1, Vector2(0, 100), 30, 4);
-    stickmanPart2 = new StickmanPart(200, 1, Vector2(200, 100), 30, 4);
+    stickman = new Stickman();
 }
 
 /* Renderiza/desenha tudo que sera necessario na tela
@@ -24,8 +22,7 @@ void GUI::Render()
     CV::color(0, 0, 0);
     CV::line(0, -GUI::screenHeight / 2, 0, GUI::screenHeight / 2);
     CV::line(-GUI::screenWidth / 2, 0, GUI::screenWidth / 2, 0);
-    stickmanPart->draw();
-    stickmanPart2->draw();
+    stickman->draw();
 }
 
 /* Controla as teclas apertadas durante a execucao
@@ -39,8 +36,17 @@ void GUI::Keyboard(int key)
     case 27:
         exit(0);
         break;
+    // seta para cima
     case 201:
-        stickmanPart->rotation += 1;
+        break;
+    // seta para o lado esquerdo
+    case 200:
+        break;
+    // seta para baixo
+    case 203:
+        break;
+    // seta para o lado direito
+    case 202:
         break;
     }
 }
