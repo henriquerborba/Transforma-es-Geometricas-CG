@@ -12,7 +12,7 @@ GUI::GUI()
 {
     screenWidth = 1366;
     screenHeight = 768;
-    stickmanPart = new StickmanPart(200, 1, Vector2(0, 100), 30, 4);
+    stickmanPart = new StickmanPart(200, 100, Vector2(0, 0), 30, 4);
     stickmanPart2 = new StickmanPart(200, 1, Vector2(200, 100), 30, 4);
 }
 

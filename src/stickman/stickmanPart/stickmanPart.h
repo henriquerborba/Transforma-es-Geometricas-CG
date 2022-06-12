@@ -8,7 +8,7 @@
 class StickmanPart
 {
 public:
-    StickmanPart(float height, float width, Vector2 position, float rotation, int vertices);
+    StickmanPart(float width, float height, Vector2 position, float rotation, int vertices);
     StickmanPart(float height, float width, int sides);
     ~StickmanPart();
 

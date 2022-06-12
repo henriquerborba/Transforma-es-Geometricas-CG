@@ -171,11 +171,11 @@
 1654016255 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\line\line.h
 	"../vector2.h"
 
-1654747008 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
+1655070913 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
 	"../polygon/polygon.h"
 	"../stickman/stickmanPart/stickmanPart.h"
 
-1654749483 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
+1655072460 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
 	<iostream>
 	"GUI.h"
 	"../Canvas/gl_canvas2d.h"
@@ -195,7 +195,7 @@
 	<iostream>
 	<vector>
 
-1654568016 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.cpp
+1655070913 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.cpp
 
 1654376038 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\polygon\polygon.cpp
 	"polygon.h"
@@ -208,7 +208,7 @@
 	<iostream>
 	<vector>
 
-1654750330 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
+1655070913 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
 	"polygon.h"
 	"../canvas/gl_canvas2d.h"
 	"../utils/utils.h"
@@ -226,12 +226,12 @@
 	<iomanip>
 	"matrix.h"
 
-1654749005 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickmanpart\stickmanpart.h
+1655072321 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickmanpart\stickmanpart.h
 	"../../utils/vector2.h"
 	"../../polygon/polygon.h"
 	"../../matrix/matrix.h"
 
-1654749893 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickmanpart\stickmanpart.cpp
+1655072525 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickmanpart\stickmanpart.cpp
 	"stickmanPart.h"
 	"../../GUI/GUI.h"
 
