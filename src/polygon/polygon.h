@@ -15,6 +15,7 @@ public:
     Polygon2d(int vertices = 4);
     ~Polygon2d();
     vector<Vector2> vertices;
+    vector<Vector2> transformedVertices;
     void draw();
     void scale(float width, float height);
     void rotate(float angle);

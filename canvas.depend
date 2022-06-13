@@ -1,130 +1,16 @@
 # depslib dependency file v1.0
-1589222603 source:d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\gl_canvas2d.cpp
+1654568016 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\canvas\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1603974868 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\gl_canvas2d.h
+1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\canvas\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
-	"Vector2.h"
-
-1426372440 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\include\gl\glut.h
-	"freeglut_std.h"
-
-1437579942 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\include\gl\freeglut_std.h
-	<windows.h>
-	<EGL/egl.h>
-	<GLES/gl.h>
-	<GLES2/gl2.h>
-	<OpenGL/gl.h>
-	<OpenGL/glu.h>
-	<GL/gl.h>
-	<GL/glu.h>
-	<stdlib.h>
-
-1426372440 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\include\gl\freeglut_ext.h
-	<stdarg.h>
-
-1589217858 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\vector2.h
-
-1603975055 source:d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\main.cpp
-	<GL/glut.h>
-	<GL/freeglut_ext.h>
-	<math.h>
-	<stdio.h>
-	<stdlib.h>
-	"gl_canvas2d.h"
-	"Bola.h"
-	"Relogio.h"
-	"Botao.h"
-
-1589214882 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\bola.h
-	"gl_canvas2d.h"
-
-1193164156 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\relogio.h
-	"gl_canvas2d.h"
-
-1589214891 d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\botao.h
-	"gl_canvas2d.h"
-
-1589218349 source:d:\ufsm\disciplinas\computacao grafica\demos\gl_1_canvasglut\src\relogio.cpp
-	"Relogio.h"
-	<math.h>
-	<stdio.h>
-	<stdlib.h>
-
-1589222603 source:g:\meu drive\cg\demos\gl_1_canvasglut\src\gl_canvas2d.cpp
-	"gl_canvas2d.h"
-	<GL/glut.h>
-
-1603974868 g:\meu drive\cg\demos\gl_1_canvasglut\src\gl_canvas2d.h
-	<stdio.h>
-	<stdlib.h>
-	<math.h>
-	<string.h>
-	<GL/glut.h>
-	<GL/freeglut_ext.h>
-	"Vector2.h"
-
-1426372440 g:\meu drive\cg\demos\gl_1_canvasglut\include\gl\glut.h
-	"freeglut_std.h"
-
-1437579942 g:\meu drive\cg\demos\gl_1_canvasglut\include\gl\freeglut_std.h
-	<windows.h>
-	<EGL/egl.h>
-	<GLES/gl.h>
-	<GLES2/gl2.h>
-	<OpenGL/gl.h>
-	<OpenGL/glu.h>
-	<GL/gl.h>
-	<GL/glu.h>
-	<stdlib.h>
-
-1426372440 g:\meu drive\cg\demos\gl_1_canvasglut\include\gl\freeglut_ext.h
-	<stdarg.h>
-
-1654001065 g:\meu drive\cg\demos\gl_1_canvasglut\src\vector2.h
-
-1589218349 source:g:\meu drive\cg\demos\gl_1_canvasglut\src\relogio.cpp
-	"Relogio.h"
-	<math.h>
-	<stdio.h>
-	<stdlib.h>
-
-1193164156 g:\meu drive\cg\demos\gl_1_canvasglut\src\relogio.h
-	"gl_canvas2d.h"
-
-1654001879 source:g:\meu drive\cg\demos\gl_1_canvasglut\src\main.cpp
-	<GL/glut.h>
-	<GL/freeglut_ext.h>
-	<math.h>
-	<stdio.h>
-	<stdlib.h>
-	"gl_canvas2d.h"
-	"Vector2.h"
-
-1652716549 source:g:\meu drive\cg\demos\gl_1_canvasglut\src\canvas\gl_canvas2d.cpp
-	"gl_canvas2d.h"
-	<GL/glut.h>
-
-1652963649 g:\meu drive\cg\demos\gl_1_canvasglut\src\canvas\gl_canvas2d.h
-	<stdio.h>
-	<stdlib.h>
-	<math.h>
-	<string.h>
-	<GL/glut.h>
-	<GL/freeglut_ext.h>
-	"../Vector2.h"
-
-1654572985 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\main.cpp
-	<GL/glut.h>
-	<GL/freeglut_ext.h>
-	"GUI/GUI.h"
-	<iostream>
+	"../utils/Vector2.h"
 
 1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\include\gl\glut.h
 	"freeglut_std.h"
@@ -143,106 +29,31 @@
 1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\canvas\gl_canvas2d.h
-	<stdio.h>
-	<stdlib.h>
+1655143070 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\vector2.h
 	<math.h>
-	<string.h>
+	<stdio.h>
+
+1654572985 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
-	"../utils/Vector2.h"
+	"GUI/GUI.h"
+	<iostream>
 
-1654012758 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\vector2.h
-
-1654568016 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\canvas\gl_canvas2d.cpp
-	"gl_canvas2d.h"
-	<GL/glut.h>
-
-1654691469 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\vector2.h
-	<math.h>
-	<stdio.h>
-
-1654016556 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\line.cpp
-
-1654016438 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\line\line.cpp
-	"line.h"
-	"../../canvas/gl_canvas2d.h"
-
-1654016255 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\line\line.h
-	"../vector2.h"
-
-1655072646 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
+1655150128 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
 	"../polygon/polygon.h"
 	"../stickman/stickman.h"
+	"../ObjectPart/ObjectPart.h"
 
-1655075137 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
-	<iostream>
-	"GUI.h"
-	"../Canvas/gl_canvas2d.h"
-	"../polygon/polygon.h"
-
-1654018735 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\circle\circle.cpp
-	"circle.h"
-	"../../canvas/gl_canvas2d.h"
-
-1654018751 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\circle\circle.h
-	"../vector2.h"
-
-1654376109 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\polygon\polygon.h
-	"../../canvas/gl_canvas2d.h"
-	"../vector2.h"
-	<iostream>
-	<vector>
-
-1655074801 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.cpp
-	"stickman.h"
-
-1654376038 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\polygon\polygon.cpp
-	"polygon.h"
-	"../../canvas/gl_canvas2d.h"
-
-1654737692 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.h
+1655141320 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.h
 	"../canvas/gl_canvas2d.h"
 	"../utils/vector2.h"
 	"../matrix/matrix.h"
 	<iostream>
 	<vector>
 
-1655077836 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
-	"polygon.h"
-	"../canvas/gl_canvas2d.h"
-	"../utils/utils.h"
-	"../GUI/GUI.h"
-
-1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\utils.h
-
 1654736139 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.h
 	<iostream>
 	"../utils/vector2.h"
-
-1654736110 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.cpp
-	<stdexcept>
-	<iostream>
-	<iomanip>
-	"matrix.h"
-
-1654782190 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickmanpart\stickmanpart.h
-	"../../utils/vector2.h"
-	"../../polygon/polygon.h"
-	"../../matrix/matrix.h"
-
-1654782190 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickmanpart\stickmanpart.cpp
-	"stickmanPart.h"
-	"../../GUI/GUI.h"
-
-1655056599 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\objectpart\objectpart.h
-	"../../utils/vector2.h"
-	"../../polygon/polygon.h"
-	"../../matrix/matrix.h"
-
-1654785096 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\objectpart\objectpart.cpp
-	"objectPart.h"
-	"../../GUI/GUI.h"
 
 1655072646 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.h
 	<stdio.h>
@@ -254,6 +65,29 @@
 	"../polygon/polygon.h"
 	"../matrix/matrix.h"
 
-1655078057 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\objectpart\objectpart.cpp
+1654736110 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\matrix\matrix.cpp
+	<stdexcept>
+	<iostream>
+	<iomanip>
+	"matrix.h"
+
+1655085620 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\objectpart\objectpart.cpp
 	"./ObjectPart.h"
+
+1655149934 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.cpp
+	"polygon.h"
+	"../canvas/gl_canvas2d.h"
+	"../utils/utils.h"
+	"../GUI/GUI.h"
+
+1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\utils.h
+
+1655155982 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.cpp
+	"stickman.h"
+
+1655155805 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
+	<iostream>
+	"GUI.h"
+	"../Canvas/gl_canvas2d.h"
+	"../polygon/polygon.h"
 

@@ -3,6 +3,7 @@
 
 #include "../polygon/polygon.h"
 #include "../stickman/stickman.h"
+#include "../ObjectPart/ObjectPart.h"
 
 class GUI
 {
@@ -19,6 +20,12 @@ public:
     static GUI &getInstance() { return instance; }
     static int getScreenWidth() { return instance.screenWidth; }
     static int getScreenHeight() { return instance.screenHeight; }
+
+    Polygon2d *circle;
+    ObjectPart *circle2;
+
+    int i;
+    Vector2 getAngle(Vector2 p1, Vector2 p2, float size);
 
     void InitCanvas();
     void Render();

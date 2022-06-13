@@ -24,6 +24,7 @@ void ObjectPart::draw()
 
 void ObjectPart::wtransform(Matrix matrix)
 {
+    mtransformation = Matrix::createIdentity(3);
     this->wtransformation = matrix;
     mtransformation *= matrix;
 }
@@ -40,5 +41,5 @@ void ObjectPart::localtransform()
     mtransformation *= Matrix::translate(-width / 2, 0);
     mtransformation *= Matrix::rotate(rotation);
     mtransformation *= Matrix::translate(width / 2, 0);
-    // localTransformation = mtransformation;
+    localTransformation = mtransformation;
 }

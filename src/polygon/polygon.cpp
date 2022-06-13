@@ -18,7 +18,6 @@ Polygon2d::Polygon2d(int n)
 
 Polygon2d::~Polygon2d()
 {
-    // dtor
 }
 
 void Polygon2d::draw()
@@ -40,6 +39,8 @@ void Polygon2d::draw()
     {
         aux[i] = wtransformation * aux[i];
     }
+
+    transformedVertices = aux;
 
     for (int i = 0; i < aux.size(); i++)
     {

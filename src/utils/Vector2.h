@@ -58,6 +58,11 @@ public:
         y /= norm;
     }
 
+    float getAngle()
+    {
+        return atan2(y, x) * 180 / M_PI;
+    }
+
     float module()
     {
         return sqrt(x * x + y * y);

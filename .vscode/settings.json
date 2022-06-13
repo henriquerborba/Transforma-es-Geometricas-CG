@@ -3,6 +3,7 @@
         "vector": "cpp",
         "iostream": "cpp",
         "array": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "new": "cpp"
     }
 }
