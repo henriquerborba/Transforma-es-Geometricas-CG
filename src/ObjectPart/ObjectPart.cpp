@@ -15,7 +15,7 @@ ObjectPart::~ObjectPart()
 
 void ObjectPart::draw()
 {
-    // wtransform(wtransformation);
+    wtransform(wtransformation);
     localtransform();
     polygon->addTransformation(mtransformation);
     polygon->draw();
@@ -26,7 +26,6 @@ void ObjectPart::wtransform(Matrix matrix)
 {
     this->wtransformation = matrix;
     mtransformation *= matrix;
-    localTransformation = mtransformation;
 }
 
 void ObjectPart::localtransform()
@@ -36,9 +35,10 @@ void ObjectPart::localtransform()
     Sy = height / aux.module();
     translateX = width / 2 + pivot.x;
     translateY = 0 + pivot.y;
+    polygon->scale(Sx, Sy);
     mtransformation *= Matrix::translate(translateX, translateY);
-    mtransformation *= Matrix::translate(width / 2, 0).inverse();
+    mtransformation *= Matrix::translate(-width / 2, 0);
     mtransformation *= Matrix::rotate(rotation);
     mtransformation *= Matrix::translate(width / 2, 0);
-    mtransformation *= Matrix::scale(Sx, Sy);
+    // localTransformation = mtransformation;
 }

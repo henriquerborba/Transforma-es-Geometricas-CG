@@ -23,6 +23,7 @@ void GUI::Render()
     CV::line(0, -GUI::screenHeight / 2, 0, GUI::screenHeight / 2);
     CV::line(-GUI::screenWidth / 2, 0, GUI::screenWidth / 2, 0);
     stickman->draw();
+    // stickman->parts[1]->wtransform(Matrix::scale(100, 1));
 }
 
 /* Controla as teclas apertadas durante a execucao

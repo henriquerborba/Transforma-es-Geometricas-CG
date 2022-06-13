@@ -23,6 +23,8 @@ Polygon2d::~Polygon2d()
 
 void Polygon2d::draw()
 {
+    mtransformation = Matrix::createIdentity(3);
+
     transform();
 
     vector<Vector2> aux = vertices;
@@ -34,7 +36,10 @@ void Polygon2d::draw()
         aux[i] = mtransformation * aux[i];
     }
 
-    mtransformation = Matrix::createIdentity(3);
+    for (int i = 0; i < aux.size(); i++)
+    {
+        aux[i] = wtransformation * aux[i];
+    }
 
     for (int i = 0; i < aux.size(); i++)
     {
@@ -73,8 +78,7 @@ void Polygon2d::addTransformation(Matrix m)
 
 void Polygon2d::transform()
 {
-    rotate(angle);
     translate(positionX, positionY);
+    rotate(angle);
     scale(width, height);
-    mtransformation *= wtransformation;
 }

@@ -8,8 +8,7 @@
 class ObjectPart
 {
 public:
-    ObjectPart(float height, float width, Vector2 position, float rotation, int vertices);
-    ObjectPart(float height, float width, int sides);
+    ObjectPart(float width, float height, Vector2 position, float rotation, int vertices);
     ~ObjectPart();
 
     void draw();
