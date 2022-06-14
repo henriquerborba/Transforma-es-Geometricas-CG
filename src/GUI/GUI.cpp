@@ -9,8 +9,13 @@ using namespace std;
  */
 GUI::GUI()
 {
-    screenWidth = 1366;
+    screenWidth = 1368;
     screenHeight = 768;
+
+    background = new Bmp("Trabalho3_Henrique_Borba/background.bmp", 0, 0);
+    background->convertBGRtoRGB();
+    background2 = new Bmp("Trabalho3_Henrique_Borba/background.bmp", 1367, 0);
+    background2->convertBGRtoRGB();
     stickman = new Stickman();
     bicicle = new Bicicle();
 
@@ -25,11 +30,20 @@ GUI::GUI()
 void GUI::Render()
 {
     fps = frames->getFrames();
-    Sleep(1 / fps * 600);
     circle->draw();
     CV::clear(255, 255, 255);
+
+    background->render(0, 0, 0);
+    background2->render(0, 0, 0);
+    background->x -= 1;
+    background2->x -= 1;
+    if (background->x < -1367)
+        background->x = 1366;
+    if (background2->x < -1367)
+        background2->x = 1367;
+
     // Direciona o eixo para o centro da viewport
-    CV::translate(GUI::getScreenWidth() / 2, GUI::getScreenHeight() / 2);
+    CV::translate(GUI::getScreenWidth() / 2, (GUI::getScreenHeight() / 2) - 100);
     CV::color(0, 0, 0);
 
     // Desenha o eixo cartesiano para referencia
@@ -42,8 +56,8 @@ void GUI::Render()
         i = circle->transformedVertices.size();
     }
     i--;
-    Vector2 leg1Angles = getAngle(stickman->leg1[0]->pivot, circle->transformedVertices[i], stickman->leg1[0]->width);
-    Vector2 leg2Angles = getAngle(stickman->leg1[0]->pivot, circle->transformedVertices[(i + 50 < circle->transformedVertices.size()) ? i + 50 : i - 50], stickman->leg1[0]->width);
+    Vector2 leg1Angles = Utils::getAngle(stickman->leg1[0]->pivot, circle->transformedVertices[i], stickman->leg1[0]->width);
+    Vector2 leg2Angles = Utils::getAngle(stickman->leg1[0]->pivot, circle->transformedVertices[(i + 50 < circle->transformedVertices.size()) ? i + 50 : i - 50], stickman->leg1[0]->width);
     stickman->draw();
     stickman->leg1[0]->rotation = leg1Angles.x;
     stickman->leg1[1]->rotation = -180 + leg1Angles.y;
@@ -51,7 +65,6 @@ void GUI::Render()
     stickman->leg2[1]->rotation = -180 + leg2Angles.y;
 
     Vector2 diff = Vector2(0, -60) - stickman->leg1[1]->polygon->transformedVertices[0];
-    printf("%f, %f\n", diff.x, diff.y);
     float angle = diff.getAngle();
 
     // Desenha a bicicleta
@@ -60,30 +73,6 @@ void GUI::Render()
     bicicle->parts[2]->rotation = angle + 180;
     bicicle->radiusWheel1[0]->rotation = angle;
     bicicle->radiusWheel2[0]->rotation = angle;
-}
-
-/*
-    @param p1: primeiro ponto do segmento
-    @param p2: segundo ponto do segmento
-    @param size: tamanho do segmento
-    @return: angulo do segmento
-*/
-Vector2 GUI::getAngle(Vector2 p1, Vector2 p2, float size)
-{
-    Vector2 diff = p2 - p1;
-    float b = diff.module();
-    float hip = size;
-
-    float ang2 = asin((b / 2) / hip);
-    ang2 = ang2 * 180 / M_PI;
-
-    float ang1 = 180 - ang2 - 90;
-
-    ang1 = diff.getAngle() + ang1;
-
-    ang2 = 2 * ang2;
-
-    return Vector2(ang1, ang2);
 }
 
 /* Controla as teclas apertadas durante a execucao

@@ -6,6 +6,8 @@
 #include "../ObjectPart/ObjectPart.h"
 #include "../bicicle/bicicle.h"
 #include "../Frames/Frames.h"
+#include "../utils/Utils.h"
+#include "../bmp/bmp.h"
 
 class GUI
 {
@@ -25,11 +27,13 @@ public:
     static int getScreenWidth() { return instance.screenWidth; }
     static int getScreenHeight() { return instance.screenHeight; }
 
+    Bmp *background;
+    Bmp *background2;
+
     Polygon2d *circle;
     ObjectPart *circle2;
 
     int i;
-    Vector2 getAngle(Vector2 p1, Vector2 p2, float size);
 
     void InitCanvas();
     void Render();
