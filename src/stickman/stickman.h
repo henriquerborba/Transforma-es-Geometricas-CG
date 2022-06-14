@@ -13,10 +13,13 @@ public:
     Stickman();
 
     ~Stickman();
+    vector<ObjectPart *> leg1;
+    vector<ObjectPart *> leg2;
     vector<ObjectPart *> parts;
     vector<Matrix> stack;
 
     void draw();
+    void drawJoint(vector<ObjectPart *> parts);
 };
 
 #endif // __STICKMAN_H__ INCLUDED

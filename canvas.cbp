@@ -47,6 +47,7 @@
 		<Unit filename="include/GL/freeglut_ext.h" />
 		<Unit filename="include/GL/freeglut_std.h" />
 		<Unit filename="include/GL/glut.h" />
+		<Unit filename="src/Frames/Frames.h" />
 		<Unit filename="src/GL/freeglut.h" />
 		<Unit filename="src/GL/freeglut_ext.h" />
 		<Unit filename="src/GL/freeglut_std.h" />
@@ -55,6 +56,8 @@
 		<Unit filename="src/GUI/GUI.h" />
 		<Unit filename="src/ObjectPart/ObjectPart.cpp" />
 		<Unit filename="src/ObjectPart/ObjectPart.h" />
+		<Unit filename="src/bicicle/bicicle.cpp" />
+		<Unit filename="src/bicicle/bicicle.h" />
 		<Unit filename="src/canvas/gl_canvas2d.cpp" />
 		<Unit filename="src/canvas/gl_canvas2d.h" />
 		<Unit filename="src/main.cpp" />

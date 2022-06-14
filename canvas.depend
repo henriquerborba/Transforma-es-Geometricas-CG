@@ -39,10 +39,12 @@
 	"GUI/GUI.h"
 	<iostream>
 
-1655150128 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
+1655173399 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
 	"../polygon/polygon.h"
 	"../stickman/stickman.h"
 	"../ObjectPart/ObjectPart.h"
+	"../bicicle/bicicle.h"
+	"../Frames/Frames.h"
 
 1655141320 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\polygon\polygon.h
 	"../canvas/gl_canvas2d.h"
@@ -55,7 +57,7 @@
 	<iostream>
 	"../utils/vector2.h"
 
-1655072646 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.h
+1655162604 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.h
 	<stdio.h>
 	"../ObjectPart/ObjectPart.h"
 	<vector>
@@ -82,12 +84,25 @@
 
 1654568016 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\utils\utils.h
 
-1655155982 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.cpp
+1655182229 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\stickman\stickman.cpp
 	"stickman.h"
 
-1655155805 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
+1655174452 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
 	<iostream>
 	"GUI.h"
 	"../Canvas/gl_canvas2d.h"
 	"../polygon/polygon.h"
+
+1655184951 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\bicicle\bicicle.h
+	<stdio.h>
+	"../ObjectPart/ObjectPart.h"
+	<vector>
+	"../polygon/polygon.h"
+
+1655185160 source:g:\meu drive\cg\demos\trabalho3_henrique_borba\src\bicicle\bicicle.cpp
+	"bicicle.h"
+
+1655173340 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\frames\frames.h
+	<stdio.h>
+	<time.h>
 

@@ -2,21 +2,27 @@
 
 Stickman::Stickman()
 {
-    // ObjectPart *head = new ObjectPart(8, 8, Vector2(14, 150), 0, 20);
-    // ObjectPart *body = new ObjectPart(130, 1, Vector2(-10, 0), 80, 4);
-    // ObjectPart *arm1 = new ObjectPart(50, 1, Vector2(0, 50), 0, 4);
-    // ObjectPart *leg1 = new ObjectPart(66, 1, Vector2(-10, 0), -5, 4);
-    // ObjectPart *leg2 = new ObjectPart(66, 1, Vector2(-10, 0), -40, 4);
+    // Modelagem da cabeça e dos braços
+    ObjectPart *head = new ObjectPart(8, 8, Vector2(10, 120), 0, 20);
+    ObjectPart *body = new ObjectPart(100, 1, Vector2(-10, 0), 80, 4);
+    ObjectPart *arm1 = new ObjectPart(60, 1, Vector2(0, 70), -30, 4);
+    ObjectPart *arm2 = new ObjectPart(50, 1, Vector2(0, 70), 30, 4);
 
-    // parts = {head, body, arm1, leg1, leg2};
+    parts = {head, body, arm1};
 
-    ObjectPart *trace = new ObjectPart(100, 1, Vector2(0, 0), 0, 4);
-    ObjectPart *trace2 = new ObjectPart(100, 1, Vector2(50, 0), 0, 4);
+    // Modelagem dos pernas
+    ObjectPart *femur1 = new ObjectPart(50, 1, Vector2(-10, 0), 0, 4);
+    ObjectPart *tibia1 = new ObjectPart(50, 1, Vector2(25, 0), 0, 4);
 
-    parts = {trace, trace2};
+    leg1 = {femur1, tibia1};
+
+    ObjectPart *femur2 = new ObjectPart(50, 1, Vector2(-10, 0), 0, 4);
+    ObjectPart *tibia2 = new ObjectPart(50, 1, Vector2(25, 0), 0, 4);
+
+    leg2 = {femur2, tibia2};
 }
 
-void Stickman::draw()
+void Stickman::drawJoint(vector<ObjectPart *> parts)
 {
     vector<Matrix> tmpStack;
 
@@ -29,6 +35,14 @@ void Stickman::draw()
         part->draw();
         tmpStack.push_back(part->localTransformation);
     }
+}
 
-    stack = tmpStack;
+void Stickman::draw()
+{
+    drawJoint(leg1);
+    drawJoint(leg2);
+    for (auto part : parts)
+    {
+        part->draw();
+    }
 }

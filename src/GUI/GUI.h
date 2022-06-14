@@ -4,6 +4,8 @@
 #include "../polygon/polygon.h"
 #include "../stickman/stickman.h"
 #include "../ObjectPart/ObjectPart.h"
+#include "../bicicle/bicicle.h"
+#include "../Frames/Frames.h"
 
 class GUI
 {
@@ -13,8 +15,10 @@ private:
     GUI();
     GUI(const GUI &) = delete;
     static GUI instance;
-
+    Bicicle *bicicle;
     Stickman *stickman;
+    Frames *frames = new Frames();
+    float fps = 100;
 
 public:
     static GUI &getInstance() { return instance; }
