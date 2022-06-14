@@ -77,6 +77,7 @@ void Polygon2d::addTransformation(Matrix m)
     this->wtransformation = m;
 }
 
+// Concatena as transfomrações na ordem correta
 void Polygon2d::transform()
 {
     translate(positionX, positionY);

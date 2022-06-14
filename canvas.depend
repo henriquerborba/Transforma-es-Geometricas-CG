@@ -74,7 +74,7 @@
 	"GUI/GUI.h"
 	<iostream>
 
-1655240303 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
+1655243973 g:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
 	"../polygon/polygon.h"
 	"../stickman/stickman.h"
 	"../ObjectPart/ObjectPart.h"
@@ -173,13 +173,13 @@
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1655240342 source:h:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
+1655244111 source:h:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.cpp
 	<iostream>
 	"GUI.h"
 	"../Canvas/gl_canvas2d.h"
 	"../polygon/polygon.h"
 
-1655240309 h:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
+1655243980 h:\meu drive\cg\demos\trabalho3_henrique_borba\src\gui\gui.h
 	"../polygon/polygon.h"
 	"../stickman/stickman.h"
 	"../ObjectPart/ObjectPart.h"

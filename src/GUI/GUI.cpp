@@ -30,6 +30,10 @@ GUI::GUI()
 void GUI::Render()
 {
     fps = frames->getFrames();
+    char fps_char[10];
+    sprintf(fps_char, "FPS: %.0f", fps);
+    CV::color(0, 0, 0);
+    CV::text(screenWidth - 100, screenHeight - 30, fps_char);
     circle->draw();
     CV::clear(255, 255, 255);
 
@@ -45,10 +49,6 @@ void GUI::Render()
     // Direciona o eixo para o centro da viewport
     CV::translate(GUI::getScreenWidth() / 2, (GUI::getScreenHeight() / 2) - 100);
     CV::color(0, 0, 0);
-
-    // Desenha o eixo cartesiano para referencia
-    // CV::line(0, -GUI::screenHeight / 2, 0, GUI::screenHeight / 2);
-    // CV::line(-GUI::screenWidth / 2, 0, GUI::screenWidth / 2, 0);
 
     // Desenha o stickman
     if (i == 0)
@@ -86,21 +86,8 @@ void GUI::Keyboard(int key)
     case 27:
         exit(0);
         break;
-    // seta para cima
-    case 201:
-        break;
-    // seta para o lado esquerdo
-    case 200:
-        break;
-    // seta para baixo
-    case 203:
-        break;
-    // seta para o lado direito
-    case 202:
-        break;
     }
 }
-
 /* Controla a posicao do mouse e se houve clique ou nao
    @param x: coordenada x do mouse
    @param y: coordenada y do mouse

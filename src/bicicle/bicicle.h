@@ -18,7 +18,6 @@ public:
     vector<ObjectPart *> radiusWheel2;
     vector<ObjectPart *> frame;
     vector<ObjectPart *> parts;
-    vector<Matrix> stack;
     Polygon2d *circleWheel1;
     Polygon2d *circleWheel2;
 
